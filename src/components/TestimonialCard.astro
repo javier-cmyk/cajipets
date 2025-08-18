@@ -1,0 +1,33 @@
+---
+export interface Props {
+  quote: string;
+  name: string;
+  description?: string;
+  avatar: string;
+}
+
+const { quote, name, description = "Cliente satisfecho", avatar } = Astro.props;
+---
+
+<div class="flex flex-col gap-6 p-6 bg-white rounded-xl border border-gray-200 flex-1">
+  <p class="text-2xl font-medium text-black leading-9">
+    "{quote}"
+  </p>
+  
+  <div class="flex items-center gap-4">
+    <img
+      class="w-11 h-11 rounded-full object-cover"
+      alt={`${name} avatar`}
+      src={avatar}
+    />
+    
+    <div class="flex flex-col gap-0.5">
+      <div class="text-sm font-medium text-black">
+        {name}
+      </div>
+      <div class="text-sm text-text-secondary">
+        {description}
+      </div>
+    </div>
+  </div>
+</div>

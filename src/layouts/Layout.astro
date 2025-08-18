@@ -1,0 +1,140 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+}
+
+const { 
+  title, 
+  description = "Cajipets - Queques, galletas y cupcakes deliciosos para mascotas en San José, Costa Rica. Productos de grado humano para tus consentidos.",
+  keywords = "queques para mascotas, galletas para perros, cupcakes para gatos, comida mascotas San José, productos grado humano mascotas, repostería mascotas Costa Rica",
+  ogImage = "/img/hero-image.png"
+} = Astro.props;
+
+const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https://cajipets.com${Astro.url.pathname}`;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Cajipets" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Spanish" />
+    <meta name="geo.region" content="CR-SJ" />
+    <meta name="geo.placename" content="San José, Costa Rica" />
+    <meta name="geo.position" content="9.9281;-84.0907" />
+    <meta name="ICBM" content="9.9281, -84.0907" />
+    
+    <!-- Viewport and Mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={Astro.site ? new URL(ogImage, Astro.site) : `https://cajipets.com${ogImage}`} />
+    <meta property="og:locale" content="es_CR" />
+    <meta property="og:site_name" content="Cajipets" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={Astro.site ? new URL(ogImage, Astro.site) : `https://cajipets.com${ogImage}`} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    
+    <!-- Critical Resource Preloads -->
+    <link rel="preload" href="/img/hero-image.webp" as="image" type="image/webp">
+    <link rel="preload" href="/img/hero-image.png" as="image" type="image/png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Cajipets",
+        "description": "Queques, galletas y cupcakes para mascotas hechos con productos de grado humano",
+        "url": "https://cajipets.com",
+        "telephone": "+506-6142-3750",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "San José, Tibás",
+          "addressLocality": "San José",
+          "addressRegion": "Tibás",
+          "postalCode": "11301",
+          "addressCountry": "CR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "9.9281",
+          "longitude": "-84.0907"
+        },
+        "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-16:00",
+        "priceRange": "$$",
+        "servesCuisine": "Pet Food",
+        "areaServed": {
+          "@type": "City",
+          "name": "San José, Costa Rica"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Productos para Mascotas",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Queques para Mascotas",
+                "description": "Queques para cumpleaños, revelaciones de género y más"
+              }
+            },
+            {
+              "@type": "Offer", 
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Galletas para Mascotas",
+                "description": "Galletas hechas con productos de grado humano"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product", 
+                "name": "Cupcakes para Mascotas",
+                "description": "Cupcakes hechos con productos de grado humano"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+  </head>
+  <body class="font-inter antialiased bg-white text-black">
+    <slot />
+  </body>
+</html>

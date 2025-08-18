@@ -1,0 +1,9 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="200" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+  <text x="150" y="80" text-anchor="middle" font-family="Arial" font-size="32" fill="#9c27b0">
+    🍪
+  </text>
+  <text x="150" y="130" text-anchor="middle" font-family="Arial" font-size="14" fill="#666">
+    Pet Snacks
+  </text>
+</svg>

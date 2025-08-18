@@ -1,0 +1,37 @@
+---
+import TestimonialCard from './TestimonialCard.astro';
+
+const testimonials = [
+  {
+    quote: "Excelente servicio y compromiso con nuestras mascotas. Mi perrito tiene alergias alimentarias y siempre me recomiendan opciones seguras y deliciosas para él. ¡Se nota el amor con el que preparan todo!",
+    name: "Daniel Arce",
+    description: "Dueño de perro con alergias",
+    avatar: "/img/avatar.svg"
+  },
+  {
+    quote: "Me encanta la calidad de los productos y la atención personalizada. Mi gato es muy exigente con su comida, pero en Cajipets siempre encuentran la manera de ofrecerle algo saludable y que le encante.", 
+    name: "Shannen Saenz",
+    description: "Amante de gatos",
+    avatar: "/img/avatar-1.svg"
+  },
+  {
+    quote: "Se preocupan por utilizar los mejores ingredientes y brindar el mejor servicio. Mis perritas son alérgicas al pollo y en Cajipets siempre me han dado opciones diferentes para que puedan disfrutar de los productos.",
+    name: "Kirina Jimenez", 
+    description: "Cliente frecuente",
+    avatar: "/img/avatar-2.svg"
+  }
+];
+---
+
+<section id="testimonios" class="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-20 py-12 sm:py-16 bg-white">
+  <h2 class="text-section font-semibold text-black mb-12 font-inter">
+    Clientes satisfechos
+  </h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {testimonials.map(testimonial => (
+      <TestimonialCard {...testimonial} />
+    ))}
+  </div>
+</section>
+

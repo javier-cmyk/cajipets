@@ -1,0 +1,9 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="200" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+  <text x="150" y="80" text-anchor="middle" font-family="Arial" font-size="32" fill="#ff9800">
+    🎂
+  </text>
+  <text x="150" y="130" text-anchor="middle" font-family="Arial" font-size="14" fill="#666">
+    Pet Cake 1
+  </text>
+</svg>

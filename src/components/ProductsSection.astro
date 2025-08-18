@@ -1,0 +1,41 @@
+---
+import ProductCard from './ProductCard.astro';
+
+const products = [
+  {
+    title: "Queques",
+    description: "Queques para cumpleaños, revelaciones de género y más.",
+    image: "/img/queques",
+    alt: "Deliciosos queques para mascotas hechos con ingredientes naturales"
+  },
+  {
+    title: "Galletas", 
+    description: "Galletas hechas con productos de grado humano para tus consentidos.",
+    image: "/img/galletas",
+    alt: "Galletas nutritivas para perros y gatos con ingredientes de grado humano"
+  },
+  {
+    title: "Cupcakes",
+    description: "Cupcakes hechos con productos de grado humano para tus consentidos.", 
+    image: "/img/cupcakes",
+    alt: "Cupcakes especiales para mascotas con decoración segura y saludable"
+  }
+];
+---
+
+<section id="productos" class="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-20 py-12 sm:py-16 bg-white">
+  <h2 class="text-section font-semibold text-black mb-12 font-inter">
+    Principales Productos
+  </h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {products.map(product => (
+      <ProductCard 
+        title={product.title}
+        description={product.description}
+        image={product.image}
+        alt={product.alt}
+      />
+    ))}
+  </div>
+</section>

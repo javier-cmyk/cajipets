@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cajipets.com/sitemap.xml
+
+# Block admin areas (if any exist in future)
+Disallow: /admin/
+Disallow: /api/
+
+# Allow search engines to crawl
+Allow: /img/
+Allow: /css/
+Allow: /js/
+
+# Crawl delay (optional)
+Crawl-delay: 1
